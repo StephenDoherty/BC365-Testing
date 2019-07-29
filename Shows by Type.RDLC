@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ReportTitle">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ReportTitle</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ReportTitle</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Code_RadioShowTypeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Code_RadioShowTypeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Code_RadioShowTypeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Description_RadioShowTypeCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Description_RadioShowTypeCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Description_RadioShowTypeCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="No_RadioShowCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>No_RadioShowCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>No_RadioShowCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Name_RadioShowCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Name_RadioShowCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Name_RadioShowCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RunTime_RadioShowCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>RunTime_RadioShowCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>RunTime_RadioShowCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PostingDate_PlaylistHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PostingDate_PlaylistHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PostingDate_PlaylistHeaderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="StartTime_PlaylistHeaderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>StartTime_PlaylistHeaderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>StartTime_PlaylistHeaderCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="UserComment">
+          <DataField>UserComment</DataField>
+        </Field>
+        <Field Name="Code_RadioShowType">
+          <DataField>Code_RadioShowType</DataField>
+        </Field>
+        <Field Name="Description_RadioShowType">
+          <DataField>Description_RadioShowType</DataField>
+        </Field>
+        <Field Name="No_RadioShow">
+          <DataField>No_RadioShow</DataField>
+        </Field>
+        <Field Name="Name_RadioShow">
+          <DataField>Name_RadioShow</DataField>
+        </Field>
+        <Field Name="RunTime_RadioShow">
+          <DataField>RunTime_RadioShow</DataField>
+        </Field>
+        <Field Name="PostingDate_PlaylistHeader">
+          <DataField>PostingDate_PlaylistHeader</DataField>
+        </Field>
+        <Field Name="StartTime_PlaylistHeader">
+          <DataField>StartTime_PlaylistHeader</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
