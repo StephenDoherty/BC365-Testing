@@ -1,5 +1,6 @@
 table 50100 "Radio Show"
 {
+    //Git Test for a comment
     fields
     {
         field(1; "No."; Code[20])
